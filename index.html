@@ -2,70 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Abdullayee MF Donzo Portfolio</title>
+  <title>Abdullayee MF. Donzo | IT, Software, Cybersecurity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/style.css">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f6f8;
+      background-color: #f8fafc;
       color: #111827;
       line-height: 1.6;
     }
 
     header {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 40px auto 20px auto;
       padding: 32px;
       background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       text-align: center;
     }
 
     header h1 {
       margin: 0;
       font-size: 32px;
+      color: #0f172a;
     }
 
     header p {
-      margin-top: 10px;
+      margin: 8px 0 20px 0;
+      font-size: 16px;
       color: #374151;
     }
 
     .cv-button {
       display: inline-block;
-      margin-top: 20px;
       padding: 12px 22px;
       background-color: #2563eb;
       color: #ffffff;
-      text-decoration: none;
       border-radius: 6px;
+      text-decoration: none;
       font-size: 15px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     .cv-button:hover {
+      background-color: #1e40af;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
     section {
       max-width: 1100px;
-      margin: 24px auto;
-      padding: 28px;
+      margin: 20px auto;
+      padding: 24px;
       background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     h2 {
       margin-top: 0;
+      font-size: 22px;
+      color: #0f172a;
       border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
     }
 
     .projects-grid {
@@ -77,50 +93,46 @@
 
     .project-card {
       background-color: #f9fafb;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      padding: 18px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
 
     .badge {
       display: inline-block;
+      margin-bottom: 6px;
       padding: 4px 10px;
+      font-size: 12px;
       background-color: #e0e7ff;
       color: #1e40af;
       border-radius: 999px;
-      font-size: 12px;
-      margin-bottom: 8px;
-    }
-
-    ul {
-      padding-left: 18px;
     }
 
     .musfan-screenshots {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
+      gap: 14px;
+      margin-top: 14px;
     }
 
     .musfan-screenshots figure {
       margin: 0;
       background-color: #ffffff;
-      border-radius: 10px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .musfan-screenshots figure:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.14);
     }
 
     .musfan-screenshots img {
@@ -129,16 +141,17 @@
     }
 
     .musfan-screenshots figcaption {
-      padding: 10px;
+      padding: 8px;
       font-size: 13px;
-      text-align: center;
       color: #374151;
+      text-align: center;
       background-color: #f9fafb;
     }
 
     footer {
       max-width: 1100px;
       margin: 40px auto;
+      padding: 20px;
       text-align: center;
       font-size: 14px;
       color: #374151;
@@ -150,12 +163,32 @@
       margin: 0 6px;
     }
 
-    @media (max-width: 900px) {
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
       .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .musfan-screenshots {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header,
+      section {
+        margin: 16px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      .projects-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -165,24 +198,26 @@
 <body>
 
 <header>
-  <h1>Abdullayee MF Donzo</h1>
-  <p>Computer Science Student | Software Systems | Cybersecurity</p>
-  <a class="cv-button" href="assets/Abdullayee_MF_Donzo_Resume_Technical.pdf" download>Download CV</a>
+  <h1>Abdullayee MF. Donzo</h1>
+  <p>IT and Software Development Enthusiast</p>
+  <a class="cv-button" href="assets/Abdullayee_MF_Donzo_Resume_Technical.pdf" download>
+    Download CV
+  </a>
 </header>
 
 <section>
   <p>
-    Computer Science student with focus on software systems, multi tenant platforms, cybersecurity fundamentals, and structured system design. Experience includes mobile platforms, role based dashboards, documentation, testing, and security awareness.
+    I am a Computer Science student at Albukhary International University with strong interest in software development, cybersecurity, digital systems, and structured project work. I focus on documentation, workflow planning, testing, system logic, and basic security analysis.
   </p>
 </section>
 
 <section>
   <h2>Cybersecurity Focus</h2>
   <ul>
-    <li>Keylogger detection and prevention framework research</li>
-    <li>Ethical hacking principles and legal boundaries</li>
-    <li>Hands on usage of Nmap, Wireshark, Burp Suite, Linux tools</li>
-    <li>System access control and data protection concepts</li>
+    <li>Keylogger detection and prevention framework design</li>
+    <li>Ethical hacking and cybersecurity fundamentals</li>
+    <li>Hands on use of Nmap, Wireshark, Burp Suite, Linux tools</li>
+    <li>Cybersecurity ethics and legal responsibility research</li>
   </ul>
 </section>
 
@@ -192,48 +227,75 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <span class="badge">Working Prototype</span>
+      <span class="badge">In Development</span>
       <h3>Musfan LMS</h3>
       <p>Founder and System Architect</p>
       <ul>
-        <li>Designed and built a multi tenant LMS platform</li>
-        <li>Role based access for Super Admin and School Management</li>
-        <li>Mobile applications tested on Android and iOS</li>
-        <li>Desktop platform expansion in progress</li>
-        <li>Planned company launch Jan to Mar 2027 in Liberia</li>
+        <li>Built a working multi tenant LMS prototype for education</li>
+        <li>Implemented role based access and tenant isolation</li>
+        <li>Deployed and tested Android and iOS builds</li>
+        <li>Working on macOS, Linux, and Windows support</li>
+        <li>Planned company launch in Liberia between Jan and Mar 2027</li>
       </ul>
 
       <div class="musfan-screenshots">
         <figure>
-          <img src="assets/musfan-lms/login.jpg" alt="Musfan LMS login">
+          <img src="assets/musfan-lms/login.jpg" alt="Musfan LMS login screen">
           <figcaption>Authentication and onboarding flow</figcaption>
         </figure>
-
         <figure>
-          <img src="assets/musfan-lms/super-admin.jpg" alt="Super Admin dashboard">
-          <figcaption>Super Admin multi tenant control dashboard</figcaption>
+          <img src="assets/musfan-lms/super-admin.jpg" alt="Musfan LMS super admin dashboard">
+          <figcaption>Super Admin multi tenant control</figcaption>
         </figure>
-
         <figure>
-          <img src="assets/musfan-lms/dean-dashboard.jpg" alt="Dean dashboard">
+          <img src="assets/musfan-lms/dean-dashboard.jpg" alt="Musfan LMS dean dashboard">
           <figcaption>School level daily operations dashboard</figcaption>
         </figure>
       </div>
     </div>
 
     <div class="project-card">
-      <h3>Keylogger Prevention Research</h3>
+      <h3>IPRT System Development</h3>
+      <p>Key Developer</p>
       <ul>
-        <li>Designed detection and mitigation framework</li>
-        <li>Focused on system integrity and user protection</li>
+        <li>Built and maintained information processing modules</li>
+        <li>Assisted with deployment and cloud testing</li>
       </ul>
     </div>
 
     <div class="project-card">
-      <h3>Database Systems Project</h3>
+      <h3>Key Logger Prevention Mechanism</h3>
+      <p>Lead Author</p>
       <ul>
-        <li>Structured relational schemas</li>
-        <li>Optimized queries and data validation</li>
+        <li>Designed detection and prevention framework</li>
+        <li>Presented findings at academic session</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Online Retail Store Database</h3>
+      <p>Database Designer</p>
+      <ul>
+        <li>Structured inventory and order schema</li>
+        <li>Optimized query performance</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Cyber Ethics Report</h3>
+      <p>Team Lead</p>
+      <ul>
+        <li>Researched digital responsibility and legal aspects</li>
+        <li>Managed a four person team</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Virtual Accessibility Software</h3>
+      <p>Co Developer</p>
+      <ul>
+        <li>Built navigation flows for visually impaired users</li>
+        <li>Added audio prompts and tested features</li>
       </ul>
     </div>
 
@@ -242,14 +304,36 @@
 
 <section>
   <h2>Technical Skills</h2>
-  <p>Languages. C, Java, JavaScript, HTML, Dart Flutter</p>
-  <p>Tools. Git, Linux, Nmap, Wireshark, Burp Suite</p>
-  <p>Databases. SQL schema design and data validation</p>
-  <p>Testing. Functional testing, workflow verification, documentation</p>
+  <p>Programming. C, Java, JavaScript, HTML, Dart Flutter</p>
+  <p>Tools. Git, Linux, Nmap, Wireshark, Burp Suite, Kali Linux, Parrot OS</p>
+  <p>Cloud. Basic cloud deployment, server testing, version control</p>
+  <p>Database. SQL, schema planning, data checks, performance notes</p>
+  <p>Testing. Feature testing, workflow review, error reporting, data validation</p>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <ul>
+    <li>Coursera Foundations of Cybersecurity</li>
+    <li>Web Security and Bug Bounty Learn PenTest</li>
+    <li>Cisco Cybersecurity Essentials</li>
+    <li>Cloud and network security short courses</li>
+    <li>PCEP Certified Entry Level Python</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Strengths</h2>
+  <ul>
+    <li>Fast learner</li>
+    <li>Strong teamwork and leadership</li>
+    <li>Problem solving and analytical thinking</li>
+    <li>Fluent English communication</li>
+  </ul>
 </section>
 
 <footer>
-  <p>© 2025 Abdullayee MF Donzo</p>
+  <p>© 2025 Abdullayee MF. Donzo</p>
   <p>
     <a href="mailto:abdullayee.mfdonzo@student.aiu.edu.my">Email</a> |
     <a href="https://github.com/abdul14641" target="_blank">GitHub</a> |
