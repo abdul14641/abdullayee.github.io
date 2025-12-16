@@ -6,73 +6,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-soft: #f9fafb;
+      --text-main: #111827;
+      --text-muted: #374151;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+      --shadow: rgba(0,0,0,0.08);
+    }
+
+    body.dark {
+      --bg-main: #0f172a;
+      --bg-card: #020617;
+      --bg-soft: #020617;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+      --accent: #60a5fa;
+      --border: #1e293b;
+      --shadow: rgba(0,0,0,0.4);
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f8fafc;
-      color: #111827;
+      background-color: var(--bg-main);
+      color: var(--text-main);
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header {
       max-width: 1100px;
       margin: 40px auto 20px auto;
       padding: 32px;
-      background-color: #ffffff;
+      background-color: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px var(--shadow);
       text-align: center;
     }
 
     header h1 {
       margin: 0;
       font-size: 32px;
-      color: #0f172a;
     }
 
     header p {
       margin: 8px 0 20px 0;
-      font-size: 16px;
-      color: #374151;
+      color: var(--text-muted);
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cv-button,
+    .theme-button {
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .cv-button {
-      display: inline-block;
-      padding: 12px 22px;
-      background-color: #2563eb;
+      background-color: var(--accent);
       color: #ffffff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 15px;
-      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .cv-button:hover {
-      background-color: #1e40af;
+    .cv-button:hover,
+    .theme-button:hover {
       transform: translateY(-2px);
+    }
+
+    .theme-button {
+      background-color: var(--bg-soft);
+      color: var(--text-main);
+      border: 1px solid var(--border);
     }
 
     section {
       max-width: 1100px;
       margin: 20px auto;
       padding: 24px;
-      background-color: #ffffff;
+      background-color: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px var(--shadow);
     }
 
     h2 {
       margin-top: 0;
       font-size: 22px;
-      color: #0f172a;
-      border-bottom: 2px solid #e5e7eb;
+      border-bottom: 2px solid var(--border);
       padding-bottom: 6px;
     }
 
     h3 {
       margin: 0 0 6px 0;
       font-size: 18px;
-      color: #111827;
     }
 
     ul {
@@ -92,16 +129,16 @@
     }
 
     .project-card {
-      background-color: #f9fafb;
+      background-color: var(--bg-soft);
       padding: 18px;
       border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      box-shadow: 0 1px 4px var(--shadow);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 20px var(--shadow);
     }
 
     .badge {
@@ -109,8 +146,8 @@
       margin-bottom: 6px;
       padding: 4px 10px;
       font-size: 12px;
-      background-color: #e0e7ff;
-      color: #1e40af;
+      background-color: var(--accent);
+      color: #ffffff;
       border-radius: 999px;
     }
 
@@ -123,16 +160,15 @@
 
     .musfan-screenshots figure {
       margin: 0;
-      background-color: #ffffff;
+      background-color: var(--bg-card);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 6px var(--shadow);
+      transition: transform 0.2s ease;
     }
 
     .musfan-screenshots figure:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.14);
     }
 
     .musfan-screenshots img {
@@ -143,9 +179,9 @@
     .musfan-screenshots figcaption {
       padding: 8px;
       font-size: 13px;
-      color: #374151;
+      color: var(--text-muted);
       text-align: center;
-      background-color: #f9fafb;
+      background-color: var(--bg-soft);
     }
 
     footer {
@@ -154,17 +190,13 @@
       padding: 20px;
       text-align: center;
       font-size: 14px;
-      color: #374151;
+      color: var(--text-muted);
     }
 
     footer a {
-      color: #2563eb;
+      color: var(--accent);
       text-decoration: none;
       margin: 0 6px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     @media (max-width: 1024px) {
@@ -200,9 +232,11 @@
 <header>
   <h1>Abdullayee MF. Donzo</h1>
   <p>IT and Software Development Enthusiast</p>
-  <a class="cv-button" href="assets/Abdullayee_MF_Donzo_Resume_Technical.pdf" download>
-    Download CV
-  </a>
+
+  <div class="top-actions">
+    <a class="cv-button" href="assets/Abdullayee_MF_Donzo_Resume_Technical.pdf" download>Download CV</a>
+    <button class="theme-button" onclick="toggleTheme()">Toggle Theme</button>
+  </div>
 </header>
 
 <section>
@@ -240,23 +274,22 @@
 
       <div class="musfan-screenshots">
         <figure>
-          <img src="assets/musfan-lms/login.jpg" alt="Musfan LMS login screen">
+          <img src="assets/musfan-lms/login.jpg" alt="Login screen">
           <figcaption>Authentication and onboarding flow</figcaption>
         </figure>
         <figure>
-          <img src="assets/musfan-lms/super-admin.jpg" alt="Musfan LMS super admin dashboard">
+          <img src="assets/musfan-lms/super-admin.jpg" alt="Super admin dashboard">
           <figcaption>Super Admin multi tenant control</figcaption>
         </figure>
         <figure>
-          <img src="assets/musfan-lms/dean-dashboard.jpg" alt="Musfan LMS dean dashboard">
-          <figcaption>School level daily operations dashboard</figcaption>
+          <img src="assets/musfan-lms/dean-dashboard.jpg" alt="Dean dashboard">
+          <figcaption>School level daily operations</figcaption>
         </figure>
       </div>
     </div>
 
     <div class="project-card">
       <h3>IPRT System Development</h3>
-      <p>Key Developer</p>
       <ul>
         <li>Built and maintained information processing modules</li>
         <li>Assisted with deployment and cloud testing</li>
@@ -265,50 +298,13 @@
 
     <div class="project-card">
       <h3>Key Logger Prevention Mechanism</h3>
-      <p>Lead Author</p>
       <ul>
         <li>Designed detection and prevention framework</li>
         <li>Presented findings at academic session</li>
       </ul>
     </div>
 
-    <div class="project-card">
-      <h3>Online Retail Store Database</h3>
-      <p>Database Designer</p>
-      <ul>
-        <li>Structured inventory and order schema</li>
-        <li>Optimized query performance</li>
-      </ul>
-    </div>
-
-    <div class="project-card">
-      <h3>Cyber Ethics Report</h3>
-      <p>Team Lead</p>
-      <ul>
-        <li>Researched digital responsibility and legal aspects</li>
-        <li>Managed a four person team</li>
-      </ul>
-    </div>
-
-    <div class="project-card">
-      <h3>Virtual Accessibility Software</h3>
-      <p>Co Developer</p>
-      <ul>
-        <li>Built navigation flows for visually impaired users</li>
-        <li>Added audio prompts and tested features</li>
-      </ul>
-    </div>
-
   </div>
-</section>
-
-<section>
-  <h2>Technical Skills</h2>
-  <p>Programming. C, Java, JavaScript, HTML, Dart Flutter</p>
-  <p>Tools. Git, Linux, Nmap, Wireshark, Burp Suite, Kali Linux, Parrot OS</p>
-  <p>Cloud. Basic cloud deployment, server testing, version control</p>
-  <p>Database. SQL, schema planning, data checks, performance notes</p>
-  <p>Testing. Feature testing, workflow review, error reporting, data validation</p>
 </section>
 
 <section>
@@ -317,18 +313,7 @@
     <li>Coursera Foundations of Cybersecurity</li>
     <li>Web Security and Bug Bounty Learn PenTest</li>
     <li>Cisco Cybersecurity Essentials</li>
-    <li>Cloud and network security short courses</li>
     <li>PCEP Certified Entry Level Python</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Strengths</h2>
-  <ul>
-    <li>Fast learner</li>
-    <li>Strong teamwork and leadership</li>
-    <li>Problem solving and analytical thinking</li>
-    <li>Fluent English communication</li>
   </ul>
 </section>
 
@@ -340,6 +325,12 @@
     <a href="https://www.linkedin.com/in/abdullayee-mf-donzo" target="_blank">LinkedIn</a>
   </p>
 </footer>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+  }
+</script>
 
 </body>
 </html>
