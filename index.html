@@ -4,7 +4,148 @@
   <meta charset="UTF-8">
   <title>Abdullayee MF. Donzo | IT, Software, Cybersecurity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f8fafc;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 40px auto 20px auto;
+      padding: 32px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #0f172a;
+    }
+
+    header p {
+      margin: 8px 0 20px 0;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    .cv-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background-color: #2563eb;
+      color: #ffffff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .cv-button:hover {
+      background-color: #1e40af;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 24px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #0f172a;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    p {
+      margin: 6px 0;
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* PROJECT GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background-color: #f9fafb;
+      padding: 18px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-card p {
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+      color: #374151;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      header,
+      section {
+        margin: 16px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -25,68 +166,74 @@
 
 <section>
   <h2>Cybersecurity Focus</h2>
-  <p>
-    I have academic exposure to cybersecurity concepts, tools, and ethical practices with focus on defensive analysis and system security fundamentals.
-  </p>
   <ul>
     <li>Keylogger detection and prevention framework design</li>
-    <li>Cybersecurity ethics and legal responsibility research</li>
+    <li>Ethical hacking and cybersecurity fundamentals</li>
     <li>Hands on use of Nmap, Wireshark, Burp Suite, Linux tools</li>
-    <li>Foundational penetration testing and network security concepts</li>
+    <li>Cybersecurity ethics and legal responsibility research</li>
   </ul>
-</section>
-
-<section>
-  <h2>Education</h2>
-  <p>Bachelor of Science in Information Technology</p>
-  <p>Albukhary International University, Malaysia</p>
-  <p>2023 to Present</p>
 </section>
 
 <section>
   <h2>Projects</h2>
 
-  <h3>IPRT System Development</h3>
-  <p>Role. Key Developer</p>
-  <ul>
-    <li>Built and maintained modules for information processing</li>
-    <li>Assisted with deployment and cloud testing</li>
-  </ul>
+  <div class="projects-grid">
 
-  <h3>Key Logger Prevention Mechanism</h3>
-  <p>Role. Lead Author</p>
-  <ul>
-    <li>Designed framework for detecting and blocking keyloggers</li>
-    <li>Presented findings at academic session</li>
-  </ul>
+    <div class="project-card">
+      <h3>IPRT System Development</h3>
+      <p>Key Developer</p>
+      <ul>
+        <li>Built and maintained information processing modules</li>
+        <li>Assisted with cloud deployment and testing</li>
+      </ul>
+    </div>
 
-  <h3>Online Retail Store Database</h3>
-  <p>Role. Database Designer</p>
-  <ul>
-    <li>Structured schema for orders and inventory</li>
-    <li>Improved query performance</li>
-  </ul>
+    <div class="project-card">
+      <h3>Key Logger Prevention Mechanism</h3>
+      <p>Lead Author</p>
+      <ul>
+        <li>Designed detection and prevention framework</li>
+        <li>Presented findings at academic session</li>
+      </ul>
+    </div>
 
-  <h3>Cyber Ethics Report</h3>
-  <p>Role. Team Lead</p>
-  <ul>
-    <li>Produced report on digital responsibility and legal aspects</li>
-    <li>Managed four person team</li>
-  </ul>
+    <div class="project-card">
+      <h3>Online Retail Store Database</h3>
+      <p>Database Designer</p>
+      <ul>
+        <li>Structured inventory and order schema</li>
+        <li>Optimized query performance</li>
+      </ul>
+    </div>
 
-  <h3>Virtual Accessibility Software</h3>
-  <p>Role. Co Developer</p>
-  <ul>
-    <li>Built navigation flows for visually impaired users</li>
-    <li>Added audio prompts and tested core functions</li>
-  </ul>
+    <div class="project-card">
+      <h3>Cyber Ethics Report</h3>
+      <p>Team Lead</p>
+      <ul>
+        <li>Researched digital responsibility and legal aspects</li>
+        <li>Managed a four person team</li>
+      </ul>
+    </div>
 
-  <h3>Multi Tenant SaaS Platform</h3>
-  <p>Role. Product and System Support</p>
-  <ul>
-    <li>Reviewed user requirements and planned workflows</li>
-    <li>Documented system logic and tested features</li>
-  </ul>
+    <div class="project-card">
+      <h3>Virtual Accessibility Software</h3>
+      <p>Co Developer</p>
+      <ul>
+        <li>Built navigation flows for visually impaired users</li>
+        <li>Added audio prompts and tested features</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Multi Tenant SaaS Platform</h3>
+      <p>Product and System Support</p>
+      <ul>
+        <li>Reviewed user requirements and workflows</li>
+        <li>Documented logic and tested system behavior</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <section>
@@ -96,7 +243,6 @@
   <p>Cloud. Basic cloud deployment, server testing, version control</p>
   <p>Database. SQL, schema planning, data checks, performance notes</p>
   <p>Testing. Feature testing, workflow review, error reporting, data validation</p>
-  <p>Other. Documentation, UI checks, team communication, system flow planning</p>
 </section>
 
 <section>
@@ -105,30 +251,17 @@
     <li>Coursera Foundations of Cybersecurity</li>
     <li>Web Security and Bug Bounty Learn PenTest</li>
     <li>Cisco Cybersecurity Essentials</li>
-    <li>Cloud and network security short courses</li>
     <li>PCEP Certified Entry Level Python</li>
   </ul>
 </section>
 
-<section>
-  <h2>Strengths</h2>
-  <ul>
-    <li>Fast learner</li>
-    <li>Strong teamwork and leadership</li>
-    <li>Problem solving and analytical thinking</li>
-    <li>Fluent English communication</li>
-  </ul>
-</section>
-
 <footer>
-  <div>
-    <p>© 2025 Abdullayee MF. Donzo</p>
-    <p>
-      <a href="mailto:abdullayee.mfdonzo@student.aiu.edu.my">Email</a> |
-      <a href="https://github.com/abdul14641" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/abdullayee-mf-donzo" target="_blank">LinkedIn</a>
-    </p>
-  </div>
+  <p>© 2025 Abdullayee MF. Donzo</p>
+  <p>
+    <a href="mailto:abdullayee.mfdonzo@student.aiu.edu.my">Email</a> |
+    <a href="https://github.com/abdul14641" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/abdullayee-mf-donzo" target="_blank">LinkedIn</a>
+  </p>
 </footer>
 
 </body>
